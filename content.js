@@ -1,13 +1,21 @@
 function geturlss() {
-    let urls = {};
-
-    $(.yuRUbf a).each(function() {
-        urls[$(this).prop('a')] = $(this).prop('href');
+    var urls = [];
+    
+    $('.yuRUbf a').each(function(index) {
+        var url_json = {};
+        url_json['id'] = index + 1;
+        url_json['URL'] = $(this).prop('href');
+        url_json['tag'] = 'a';
+        urs.append(JSON.stringify(url_json));
     });
-    $(.yuRUbf link).each(function() {
-        urls[$(this).prop('link')] = $(this).prop('href');
+    $('.yuRUbf link').each(function(index) {
+        var url_json = {};
+        url_json['id'] = index + 1;
+        url_json['URL'] = $(this).prop('href');
+        url_json['tag'] = 'link';
+        urs.append(JSON.stringify(url_json));
     });
-
-    var URL_JSON = JSON.stringify(urls);
-    console.log(URL_JSON);
+    
+    console.log(urls);
+    return urls;
 }

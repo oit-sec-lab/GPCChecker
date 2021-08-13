@@ -1,7 +1,7 @@
 {
-    "name" : "dnt-verify"
-    "version" : "1.0.0"
-    "description" : "An extension that checks whether the server you are communivating with supports DNT without using client infomation"
+    "name" : "dnt-verify",
+    "version" : "1.0.0",
+    "description" : "An extension that checks whether the server you are communivating with supports DNT without using client infomation",
     "content_scripts" : [
         {
             "matches" : ["https://www.google.com/search?*"]
