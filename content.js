@@ -42,7 +42,7 @@ function checkDNT(links) {
     var response = fetch(url, {
         method: 'GET',
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type' : 'text'
         },
         body: links
     }
@@ -57,10 +57,8 @@ function main() {
             if(!res.ok) {
             throw new Error('Fetch: ${res.status} ${res.statusText}');
             }
-            return res.json();
-        })
-        .then(json => {
             console.log("kokomade");
+            return res.json();
         })
         .catch((error) => {
             console.error(error);
