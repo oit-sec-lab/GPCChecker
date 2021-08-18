@@ -9,27 +9,16 @@ function getLinks() {
     let bypass_id = {};
     var id = 1;
 
-    $('.yuRUbf a').each(function() {
-        var link_json = {};
-        link_json["id"] = id;
-        link_json["URL"] = $(this).prop('href');
-        link_json_array.append(JSON.stringify(link_json));
+    $('.TbwUpd cite').each(function(index) {
+        if (index % 2 == 0) {
+            var link_json = {};
+            link_json["id"] = index;
+            link_json["URL"] = $(this).text();
+            link_json_array.append(JSON.stringify(link_json));
 
-        bypass[id] = $(this).prop('href');
-
-        id++;
+            bypass[index] = $(this).text();
+        }
     });
-    $('.yuRUbf link').each(function() {
-        var link_json = {};
-        link_json["id"] = id;
-        link_json["URL"] = $(this).prop('href');
-        link_json_array.append(JSON.stringify(link_json));
-
-        bypass[id] = $(this).prop('href');
-
-        id++;
-    });
-    
 
     return {
         bypass_id,
