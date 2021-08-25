@@ -1,31 +1,5 @@
 let URL = "***************"
 
-main();
-
-
-
-function getLinks() {
-    let link_json_array = [];
-    let bypass_id = {};
-    var id = 1;
-
-    $('.TbwUpd cite').each(function(index) {
-        if (index % 2 == 0) {
-            var link_json = {};
-            link_json["id"] = index;
-            link_json["URL"] = $(this).text();
-            link_json_array.append(JSON.stringify(link_json));
-
-            bypass[index] = $(this).text();
-        }
-    });
-
-    return {
-        bypass_id,
-        link_json_array
-    };
-}
-
 
 function checkDNT(links) {
     var response = fetch(url, {
