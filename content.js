@@ -1,7 +1,7 @@
 let URL = "***************"
 
-var {bypass_link_from_id, link_json_array} = getLinks();
-checkDNT(URL, link_json_array)
+var {bypass_link_from_id, link_json_array} = getURLs();
+checkGPC(URL, link_json_array)
     .then(res => {
         if(!res.ok) {
         throw new Error('Fetch: ${res.status} ${res.statusText}');
@@ -14,7 +14,7 @@ checkDNT(URL, link_json_array)
     });
 
 
-async function checkDNT(url, links) {
+async function checkGPC(url, links) {
     var response = await fetch(url, {
         method: 'POST',
         headers: {
