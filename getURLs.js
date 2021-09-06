@@ -48,8 +48,8 @@ function getURLs() {
         }
     });
 
-    return {
+    return [
         bypass_id,
         URL_json_array
-    };
+    ];
 }

@@ -1,6 +1,6 @@
 let URL = "***************"
 
-var {bypass_link_from_id, link_json_array} = getURLs();
+var [bypass_link_from_id, link_json_array] = getURLs();
 checkGPC(URL, link_json_array)
     .then(res => {
         if(!res.ok) {
