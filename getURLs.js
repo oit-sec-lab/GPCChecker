@@ -14,7 +14,7 @@ function getURLs() {
             id++;
         }
     });
-    $('.yuRUbf URL').each(function() {
+    $('.yuRUbf link').each(function() {
         var URL_json = {};
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
@@ -25,7 +25,7 @@ function getURLs() {
             id++;
         }
     });
-    $('g-URL URL').each(function() {
+    $('g-link link').each(function() {
         var URL_json = {};
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
@@ -36,7 +36,7 @@ function getURLs() {
             id++;
         }
     });
-    $('g-URL a').each(function() {
+    $('g-link a').each(function() {
         var URL_json = {};
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
