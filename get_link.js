@@ -1,6 +1,5 @@
 function getURLs() {
     let URL_json_array = [];
-    let bypass_id = {};
     var id = 1;
 
     $('.yuRUbf a').each(function() {
@@ -10,7 +9,6 @@ function getURLs() {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
             URL_json_array.push(JSON.stringify(URL_json));
-            bypass_id[id] = URL;
             id++;
         }
     });
@@ -21,7 +19,6 @@ function getURLs() {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
             URL_json_array.push(JSON.stringify(URL_json));
-            bypass_id[id] = URL;
             id++;
         }
     });
@@ -32,7 +29,6 @@ function getURLs() {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
             URL_json_array.push(JSON.stringify(URL_json));
-            bypass_id[id] = URL;
             id++;
         }
     });
@@ -43,13 +39,9 @@ function getURLs() {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
             URL_json_array.push(JSON.stringify(URL_json));
-            bypass_id[id] = URL;
             id++;
         }
     });
 
-    return [
-        bypass_id,
-        URL_json_array
-    ];
+    return URL_json_array;
 }
