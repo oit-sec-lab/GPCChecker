@@ -12,6 +12,9 @@
                 "insert_icons.js",
                 "content.js"
             ]
-        }
+        } 
+    ],
+    "web_accessible_resources": [
+        "images/*"
     ]
 }
