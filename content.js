@@ -22,3 +22,5 @@ async function checkGPC(url, links) {
     })
     return response;
 }
+
+insert_gpc_icon(link_json_array);
