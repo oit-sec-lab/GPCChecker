@@ -1,35 +1,33 @@
-//const IMG_TAG = '<img src="https://globalprivacycontrol.org/img/favicon/favicon-32x32.png">'
-const IMG_TAG_true = '<img src="https://globalprivacycontrol.org/img/favicon/favicon-32x32.png">'
-const IMG_TAG_false = '<img src="https://globalprivacycontrol.org/img/favicon/favicon-32x32.png">'
+const EXTENSION_ID = chrome.runtime.id;
+const IMG_PATH_TRUE = 'chrome-extension://' + EXTENSION_ID + '/images/gpc_logo_true.jpg'
+const IMG_PATH_FLASE = 'chrome-extension://' + EXTENSION_ID + '/images/gpc_logo_false.jpg'
+const IMG_TAG_TRUE = "<img src=" + IMG_PATH_TRUE + ">"
+const IMG_TAG_FALSE = "<img src=" + IMG_PATH_FLASE + ">"
 function insert_gpc_icon(gpc_result) {
+    var index = 0;
     $('.yuRUbf a').each(function() {
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
-            var length = Object.keys(gpc_result).length;
-            let decoded_array = JSON.parse(gpc_result);
-            var match_array_bool;
-            for(var i = 0; i < length; i++){
-                if(decoded_array[i].URL == URL){
-                    match_array_bool = x;
-                }
-            }
+            var match_array_bool = gpc_result[index]['gpc'];
             if(match_array_bool){
-                $(this).children("br").after(IMG_TAG_true);
+                $(this).children("br").after(IMG_TAG_TRUE);
             }
             else{
-                $(this).children("br").after(IMG_TAG_false);
+                $(this).children("br").after(IMG_TAG_FALSE);
             }
+            index++;
         }
     });
     $('.yuRUbf link').each(function() {
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
-            var bool_1 = JSON.parse(gpc_result[index]);
-            if(bool_1.gpc){
-                $(this).children("br").after(IMG_TAG_true);
+            console.log(gpc_result);
+            var match_array_bool = gpc_result[index]['gpc'];
+            if(match_array_bool){
+                $(this).children("br").after(IMG_TAG_TRUE);
             }
             else{
-                $(this).children("br").after(IMG_TAG_false);
+                $(this).children("br").after(IMG_TAG_FALSE);
             }
             index++;
         }
@@ -37,12 +35,13 @@ function insert_gpc_icon(gpc_result) {
     $('g-link link').each(function() {
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
-            var bool_1 = JSON.parse(gpc_result[index]);
-            if(bool_1.gpc){
-                $(this).children("br").after(IMG_TAG_true);
+            console.log(gpc_result);
+            var match_array_bool = gpc_result[index]['gpc'];
+            if(match_array_bool){
+                $(this).children("br").after(IMG_TAG_TRUE);
             }
             else{
-                $(this).children("br").after(IMG_TAG_false);
+                $(this).children("br").after(IMG_TAG_FALSE);
             }
             index++;
         }
@@ -50,12 +49,13 @@ function insert_gpc_icon(gpc_result) {
     $('g-link a').each(function() {
         var URL = $(this).prop('href');
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
-            var bool_1 = JSON.parse(gpc_result[index]);
-            if(bool_1.gpc){
-                $(this).children("br").after(IMG_TAG_true);
+            console.log(gpc_result);
+            var match_array_bool = gpc_result[index]['gpc'];
+            if(match_array_bool){
+                $(this).children("br").after(IMG_TAG_TRUE);
             }
             else{
-                $(this).children("br").after(IMG_TAG_false);
+                $(this).children("br").after(IMG_TAG_FALSE);
             }
             index++;
         }
