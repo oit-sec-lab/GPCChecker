@@ -1,13 +1,12 @@
-let URL = "***************"
+let URL = "**********"
 
-var [bypass_link_from_id, link_json_array] = getURLs();
+var link_json_array = getURLs();
+console.log(link_json_array);
+
 checkGPC(URL, link_json_array)
-    .then(res => {
-        if(!res.ok) {
-        throw new Error('Fetch: ${res.status} ${res.statusText}');
-        }
-        //Please add the following process
-        console.log("kokomade");
+    .then(res => res.json())
+    .then(data => {
+        insert_gpc_icon(data);
     })
     .catch((error) => {
         console.error(error);
@@ -17,10 +16,8 @@ checkGPC(URL, link_json_array)
 async function checkGPC(url, links) {
     var response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type' : 'text/plain'
-        },
+        headers:{'ContentType': 'application/json'},
         body: links
     })
-    return response.text;
+    return response;
 }

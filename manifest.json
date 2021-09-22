@@ -1,5 +1,5 @@
 {
-    "name" : "dnt-verify",
+    "name" : "gpc-verify",
     "version" : "1.0.0",
     "manifest_version" : 2,
     "description" : "An extension that checks whether the server you are communivating with supports DNT without using client infomation",
@@ -8,9 +8,13 @@
             "matches" : ["https://www.google.com/search?*"],
             "js" : [
                 "jquery-3.6.0.min.js",
-                "content.js",
-                "getURLs.js"
+                "get_link.js",
+                "insert_icons.js",
+                "content.js"
             ]
-        }
+        } 
+    ],
+    "web_accessible_resources": [
+        "images/*"
     ]
 }
