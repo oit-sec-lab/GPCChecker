@@ -16,6 +16,7 @@ checkGPC(URL, link_json_array)
 async function checkGPC(url, links) {
     var response = await fetch(url, {
         method: 'POST',
+        headers:{'ContentType': 'application/json'},
         body: links
     })
     return response;
