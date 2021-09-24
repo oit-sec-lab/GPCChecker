@@ -8,7 +8,7 @@ function getURLs() {
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
-            URL_json_array.push(JSON.stringify(URL_json));
+            URL_json_array.push(URL_json);
             id++;
         }
     });
@@ -18,7 +18,7 @@ function getURLs() {
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
-            URL_json_array.push(JSON.stringify(URL_json));
+            URL_json_array.push(URL_json);
             id++;
         }
     });
@@ -28,7 +28,7 @@ function getURLs() {
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
-            URL_json_array.push(JSON.stringify(URL_json));
+            URL_json_array.push(URL_json);
             id++;
         }
     });
@@ -38,10 +38,10 @@ function getURLs() {
         if (URL.indexOf('webcache') == -1 && URL.indexOf('www.google.com/search?') == -1) {
             URL_json["id"] = id;
             URL_json["URL"] = URL;
-            URL_json_array.push(JSON.stringify(URL_json));
+            URL_json_array.push(URL_json);
             id++;
         }
     });
 
-    return URL_json_array;
+    return JSON.stringify(URL_json_array);
 }

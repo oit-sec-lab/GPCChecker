@@ -1,7 +1,6 @@
 let URL = "**********"
 
 var link_json_array = getURLs();
-console.log(link_json_array);
 
 checkGPC(URL, link_json_array)
     .then(res => res.json())
@@ -16,7 +15,7 @@ checkGPC(URL, link_json_array)
 async function checkGPC(url, links) {
     var response = await fetch(url, {
         method: 'POST',
-        headers:{'ContentType': 'application/json'},
+        headers:{'Content-Type': 'application/json'},
         body: links
     })
     return response;
