@@ -1,4 +1,4 @@
-let URL = "**********"
+let URL = "https://gpcchecker.net/sites"
 
 var link_json_array = getURLs();
 
