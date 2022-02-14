@@ -1,4 +1,4 @@
-# GPC Checher  
+# GPC Checker  
 
 <span style="font-size: 250%;">現在サーバーを学内に設置いるため，学外から使用することができません．</span>
 <br>
